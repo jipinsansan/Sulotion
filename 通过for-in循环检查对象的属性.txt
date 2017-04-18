@@ -1,0 +1,5 @@
+for (var name in object) {  
+    if (object.hasOwnProperty(name)) { 
+        // do something with name
+    }  
+}

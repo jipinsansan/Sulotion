@@ -1,0 +1,33 @@
+设置背景图片的两种方式，并解决手机端背景图片高度自适应问题
+
+1 设置背景图片的两种方式：
+
+方式一： <img src="../img/10.jpg"/ class="back" id="Background">
+
+.back{
+position: fixed;
+width: 100%;
+height: 100%;
+display: block;
+z-index: -100;	
+}
+
+方式二：div class="body" id="Background"></div>
+
+.body{
+width: 100%;
+height: 100%;
+position: fixed;
+z-index: -10;
+background-image: url(../img/10.jpg);
+background-repeat: no-repeat;
+background-position: 0px 0px;
+background-size: 100% 100%;
+}
+
+2 解决手机端背景图片自适应问题
+
+(function(){ 	//设置背景图片高度(function(){ 	//设置背景图片高度("#Background").height($("#Background").height());
+});
+
+ 

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <meta charset="utf-8" />
+</head>
+<body>
+    <script src="/scripts/jquery-1.10.2.js"></script>
+    <script src="/scripts/jquery.signalR-2.1.2.js"></script>
+    <script type="text/javascript">
+        var conn = $.connection("/myconnection");
+
+        conn.start().done(function (data) {
+            console.log("当前clientID=" + data.id);
+        });
+
+        //接受服务器的推送
+        conn.received(function (data) {
+            console.log("server返回的数据： " + data);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <style>
+        #preview img{width:20%;height:150px;float:left;}
+    </style>
+</head>
+<body>
+<input type="file" id="myfile">
+<div id="preview"></div>
+<script>
+    var file_array = [];
+    document.getElementById('myfile').addEventListener('change',function(){
+        var file_data = document.getElementById('myfile').files[0];
+        var reader_data = new FileReader();
+        reader_data.readAsDataURL(file_data);
+        reader_data.onload = function(e){
+            var base64 = e.srcElement.result;
+            file_array.push(base64);
+            document.getElementById('preview').innerHTML += '<img src="'+base64+'"/>';
+        }
+        console.dir(file_array);
+    });
+</script>
+</body>
+</html>

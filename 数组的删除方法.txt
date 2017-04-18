@@ -1,0 +1,17 @@
+如果对数组元素直接使用delete，其实并没有删除，只是将元素置为了undefined。数组元素删除应使用splice。
+
+切忌：
+
+var items = [12, 548 ,'a' , 2 , 5478 , 'foo' , 8852, , 'Doe' ,2154 , 119 ]; 
+items.length; // return 11 
+delete items[3]; // return true 
+items.length; // return 11 
+/* items 结果为 [12, 548, "a", undefined × 1, 5478, "foo", 8852, undefined × 1, "Doe", 2154, 119] */
+而应：
+
+var items = [12, 548 ,'a' , 2 , 5478 , 'foo' , 8852, , 'Doe' ,2154 , 119 ]; 
+items.length; // return 11 
+items.splice(3,1) ; 
+items.length; // return 10 
+/* items 结果为 [12, 548, "a", 5478, "foo", 8852, undefined × 1, "Doe", 2154, 119]
+删除对象的属性时可以使用delete。

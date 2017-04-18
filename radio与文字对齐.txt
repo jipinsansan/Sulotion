@@ -1,0 +1,13 @@
+布局如下：
+<input type="radio" value="立即发送" name="a_1">立即发送
+<input type="radio" value="保存到草稿箱" name="a_1">保存到草稿箱
+如何才能让那个小按钮与文字对其呢？
+解决方法:
+1.以vertical-align:text-bottom为基础的
+css代码如下：vertical-align:text-bottom; margin-bottom:2px; margin-bottom:-2px\9;
+2.以vertical-align:text-top为基础的
+css代码如下：height:13px; vertical-align:text-top; margin-top:0;
+3.以vertical-align:bottom为基础的
+css代码如下：height:15px; vertical-align:bottom; margin-bottom:3px; margin-top:-1px;
+4.以vertical-align:middle为基础的
+css代码如下：vertical-align:middle; margin-top:-2px; margin-bottom:1px;

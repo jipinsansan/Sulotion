@@ -1,0 +1,13 @@
+.box{width:50%; padding:20px; margin:20px auto; background-color:#f0f3f9; text-align:justify;}
+.list{width:120px; display:inline-block; padding-bottom:20px; text-align:center; vertical-align:top;}
+如下HTML代码：
+
+<div class="box">
+    <span class="list"><img data-src="http://image.zhangxinxu.com/image/study/s/s128/mm9.jpg" />
+哇哦，美女，口水，鼻血~~~</span>
+    <span class="list"><img data-src="http://image.zhangxinxu.com/image/study/s/s128/mm9.jpg" />
+哇哦，美女，口水，鼻血，不行了，我的小兔乱撞~~</span>
+    .
+    .
+    .
+</div>

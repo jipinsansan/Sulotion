@@ -1,0 +1,18 @@
+英文：Tools --> Build System --> new Build System 中文：工具 --> 编译系统 --> 新建编译系统
+在打开的文件中输入
+{
+    "cmd": ["node", "$file"],
+    "file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)",
+    "working_dir": "${project_path:${folder}}",
+    "selector": "source.js",
+    "shell": true,
+    "encoding": "utf-8",
+    "windows": {
+        "cmd": ["node", "$file"]
+    }
+}
+3
+如果系统不是64位的话，把window的cmd改成
+"cmd": ["taskkill /f /im node.exe >nul 2>nul & node", "$file"]
+4
+先建一个js文件，之后ctrl+b就可以看到运行的结果了。

@@ -1,0 +1,1 @@
+var argArray = Array.prototype.slice.call(arguments);

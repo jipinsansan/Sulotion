@@ -1,0 +1,4 @@
+var squares = [1,2,3,4].map(function (val) {  
+    return val * val;  
+}); 
+// squares will be equal to [1, 4, 9, 16]

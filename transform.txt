@@ -1,0 +1,205 @@
+transform:rotate()：
+
+含义：旋转；其中“deg”是“度”的意思，如“10deg”表示“10度”下同。
+
+点此查看实例展示
+
+.demo_transform1{-webkit-transform:rotate(10deg);-moz-transform:rotate(10deg)}
+
+transform:skew()：
+
+含义：倾斜；
+
+点此查看实例展示
+
+.demo_transform2{-webkit-transform:skew(20deg);-moz-transform:skew(20deg)}
+
+transform:scale()：
+
+含义：比例；“1.5”表示以1.5的比例放大，如果要放大2倍，须写成“2.0”，缩小则为负“-”。
+
+点此查看实例展示
+
+.demo_transform3{-webkit-transform:scale(1.5);-moz-transform:scale(1.5)}
+
+transform:translate()：
+
+含义：变动，位移；如下表示向右位移120像素，如果向上位移，把后面的“0”改个值就行，向左向下位移则为负“-”。
+
+点此查看实例展示
+
+.demo_transform4{-webkit-transform:translate(120px,0);-moz-transform:translate(120px,0)}
+
+transform综合：
+
+transform的常用属性就是这些了，下面我们借助transition的帮忙来演示一个关于css3 transform的综合实例：
+
+点此查看实例展示
+
+.demo_transform5{-webkit-transition:all 1s ease-in-out;-moz-transition:all 1s ease-in-out}
+.demo_transform5:hover{-webkit-transform:rotate(360deg) skew(-20deg) scale(3.0) translate(100px,0);-moz-transform:rotate(360deg) skew(-20deg)scale(3.0) translate(100px,0)}
+
+
+
+
+
+
+
+
+
+
+
+
+----------------------------------translateY的一个实例-----------------------------------------------
+
+<div class="main">
+<div class="view view-tenth">
+<figure>
+<div class="thumb"><img src="http://tupian.enterdesk.com/2014/lxy/2014/04/11/2/5.jpg" /></div>
+<div class="mask">
+<h2>Wonder Girls</h2>
+<p>Wonder Girls一向以青春活力的形象展现在观众面前，先后在韩国和...</p>
+<a href="#" class="link">查看全文</a>
+</div>
+</figure>
+</div>
+<div class="view view-tenth">
+<figure>
+<div class="thumb"><img src="http://tupian.enterdesk.com/2014/lxy/2014/04/11/2/3.jpg" /></div>
+<div class="mask">
+<h2>Wonder Girls</h2>
+<p>Wonder Girls一向以青春活力的形象展现在观众面前，先后在韩国和...</p>
+<a href="#" class="link">查看全文</a>
+</div>
+</figure>
+</div>
+<div class="view view-tenth">
+<figure>
+<div class="thumb"><img src="http://tupian.enterdesk.com/2014/lxy/2014/04/11/2/10.jpg" /></div>
+<div class="mask">
+<h2>Wonder Girls</h2>
+<p>Wonder Girls一向以青春活力的形象展现在观众面前，先后在韩国和...</p>
+<a href="#" class="link">查看全文</a>
+</div>
+</figure>
+</div>
+<div class="view view-tenth">
+<figure>
+<div class="thumb"><img src="http://tupian.enterdesk.com/2014/lxy/2014/04/11/2/11.jpg" /></div>
+<div class="mask">
+<h2>Wonder Girls</h2>
+<p>Wonder Girls一向以青春活力的形象展现在观众面前，先后在韩国和...</p>
+<a href="#" class="link">查看全文</a>
+</div>
+</figure>
+</div>
+</div>
+.main *{
+padding:0;
+margin:0;
+font-family:'Source Code Pro', Menlo, Consolas, Monaco, monospace;
+box-sizing: border-box;
+-webkit-box-sizing: border-box;
+
+}
+.main {
+position: relative;
+width: 680px;
+margin: 0 auto;
+}
+.view {
+width: 300px;
+margin: 10px;
+float: left;
+border: 10px solid #fff;
+-webkit-box-shadow: 1px 1px 2px #e6e6e6,-1px -1px 2px #e6e6e6;
+-moz-box-shadow: 1px 1px 2px #e6e6e6,-1px -1px 2px #e6e6e6;
+box-shadow: 1px 1px 2px #e6e6e6,-1px -1px 2px #e6e6e6;
+cursor: default;
+}
+.view figure {
+margin: 0;
+position: relative;
+}
+.view figure img {
+max-width: 100%;
+display: block;
+position: relative;
+}
+.view .thumb {
+overflow: hidden;
+}
+.view .mask {
+position: absolute;
+top: 0;
+left: 0;
+bottom:0;
+width: 100%;
+top: auto;
+bottom: 0;
+padding: 15px;
+background: rgb(233, 194, 236);
+color: #ed4e6e;
+}
+
+.view .mask h2 {
+margin: 0 0 5px;
+padding: 0 0 5px;
+color: #fff;
+font-size: 18px;
+line-height:14px;
+border-bottom:1px solid rgba(255,255,255,.2);
+}
+.view .mask p{
+font-size: 14px;
+margin-bottom: 5px;
+}
+.view .link {
+text-align: center;
+padding: 5px 10px;
+border-radius: 2px;
+display: inline-block;
+background: #ed4e6e;
+color: #fff;
+text-decoration:none;
+font-size: 14px;
+}
+
+.view-tenth figure {
+overflow: hidden;
+}
+
+.view-tenth figure img {
+-webkit-transition: -webkit-transform 0.4s;
+-moz-transition: -moz-transform 0.4s;
+transition: transform 0.4s;
+}
+
+.view-tenth figure:hover img{
+-webkit-transform: translateY(-50px);
+-moz-transform: translateY(-50px);
+-ms-transform: translateY(-50px);
+transform: translateY(-50px);
+}
+
+.view-tenth .mask {
+opacity: 0;
+-webkit-transform: translateY(100%);
+-moz-transform: translateY(100%);
+-ms-transform: translateY(100%);
+transform: translateY(100%);
+-webkit-transition: -webkit-transform 0.4s, opacity 0.1s 0.3s;
+-moz-transition: -moz-transform 0.4s, opacity 0.1s 0.3s;
+transition: transform 0.4s, opacity 0.1s 0.3s;
+}
+
+.view-tenth figure:hover .mask {
+opacity: 1;
+-webkit-transform: translateY(0px);
+-moz-transform: translateY(0px);
+-ms-transform: translateY(0px);
+transform: translateY(0px);
+-webkit-transition: -webkit-transform 0.4s, opacity 0.1s;
+-moz-transition: -moz-transform 0.4s, opacity 0.1s;
+transition: transform 0.4s, opacity 0.1s;
+}

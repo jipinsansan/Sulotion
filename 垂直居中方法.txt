@@ -1,0 +1,176 @@
+细数一下几种方法：
+
+
+1，使用position:absolute,设置left、top、margin-left、margin-top的属性
+
+.one{
+position:absolute;
+width:200px;
+height:200px;
+top:50%;
+left:50%;
+margin-top:-100px;
+margin-left:-100px;
+background:red; 
+}
+这种方法基本浏览器都能够兼容，不足之处就是需要固定宽高。
+
+
+2，使用position:fixed,同样设置left、top、margin-left、margin-top的属性
+
+.two{
+position:fixed;
+width:180px;
+height:180px;
+top:50%;
+left:50%;
+margin-top:-90px;
+margin-left:-90px;
+background:orange;
+}
+大家都知道的position:fixed,IE是不支持这个属性的
+
+
+3，利用position:fixed属性，margin:auto这个必须不要忘记了。
+
+.three{
+position:fixed;
+width:160px;
+height:160px;
+top:0;
+right:0;
+bottom:0;
+left:0;
+margin:auto;
+background:pink;
+}
+
+
+4，利用position:absolute属性，设置top/bottom/right/left
+
+.four{
+position:absolute;
+width:140px;
+height:140px;
+top:0;
+right:0;
+bottom:0;
+left:0;
+margin:auto;
+background:black;
+}
+
+
+5，利用display:table-cell属性使内容垂直居中
+
+.five{
+display:table-cell;
+vertical-align:middle;
+text-align:center;
+width:120px;
+height:120px;
+background:purple;
+}
+
+
+6，最简单的一种使行内元素居中的方法，使用line-height属性
+
+.six{
+width:100px;
+height:100px;
+line-height:100px;
+text-align:center;
+background:gray;
+}
+这种方法也很实用，比如使文字垂直居中对齐
+
+
+
+7，使用css3的display:-webkit-box属性，再设置-webkit-box-pack:center/-webkit-box-align:center
+
+.seven{
+width:90px;
+height:90px;
+display:-webkit-box;
+-webkit-box-pack:center;
+-webkit-box-align:center;
+background:yellow;
+color:black;
+}
+
+
+8，使用css3的新属性transform:translate(x,y)属性
+
+.eight{
+position:absolute;
+width:80px;
+height:80px;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+-webkit-transform:translate(-50%,-50%);
+-moz-transform:translate(-50%,-50%);
+-ms-transform:translate(-50%,-50%);
+background:green;
+}
+这个方法可以不需要设定固定的宽高，在移动端用的会比较多，在移动端css3兼容的比较好
+
+
+
+9、最高大上的一种，使用:before元素
+
+.nine{
+position:fixed;
+display:block;
+top:0;
+right:0;
+bottom:0;
+left:0;
+text-align:center;
+background:rgba(0,0,0,.5);
+}
+.nine:before{
+content:'';
+display:inline-block;
+vertical-align:middle;
+height:100%;
+}
+.nine .content{
+display:inline-block;
+vertical-align:middle;
+width:60px;
+height:60px;
+line-height:60px;
+color:red;
+background:yellow;
+}
+
+
+总而言之所有的居中的方法就是你必须要掌握css属性的这个概念HTML DIV+CSS ，你掌握了就可以好好的运用这些居中的东西了
+
+10、flex方式
+.parent{
+   justify-content:center;
+   align-items:center;
+   display:-webkit-flex;
+}
+
+11左边图片右边文字居中：
+当文字和图片处于同一文档流，发现采用vertical-align: middle; 无法实现图片和文字的垂直居中。
+
+原来图片有自己的align属性，可以在图片中加入 align="absmiddle" 实现。
+
+实现<img src="my.jpg" align="absmiddle" />这是文字
+
+附，网络资料：图片align属性集合：
+
+    AbsBottom    图像的下边缘与同一行中最大元素的下边缘对齐。  
+    AbsMiddle    图像的中间与同一行中最大元素的中间对齐。  
+    Baseline     图像的下边缘与第一行文本的下边缘对齐。  
+    Bottom       图像的下边缘与第一行文本的下边缘对齐。  
+    Left         图像沿网页的左边缘对齐，文字在图像右边换行。  
+    Middle       图像的中间与第一行文本的下边缘对齐。  
+    NotSet       未设定对齐方式。  
+    Right        图像沿网页的右边缘对齐，文字在图像左边换行。  
+    TextTop      图像的上边缘与同一行上最高文本的上边缘对齐。  
+    Top          图像的上边缘与同一行上最高元素的上边缘对齐。
